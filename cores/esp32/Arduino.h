@@ -109,6 +109,8 @@
 #define digitalPinToBitMask(pin)    (1UL << (((pin)>31)?((pin)-32):(pin)))
 #define digitalPinToTimer(pin)      (0)
 #define analogInPinToBit(P)         (P)
+#define portInputRegister8(port)    ((volatile uint8_t*)((port)?GPIO_IN1_REG:GPIO_IN_REG))
+#define portOutputRegister8(port)   ((volatile uint8_t*)((port)?GPIO_OUT1_REG:GPIO_OUT_REG))
 #define portOutputRegister(port)    ((volatile uint32_t*)((port)?GPIO_OUT1_REG:GPIO_OUT_REG))
 #define portInputRegister(port)     ((volatile uint32_t*)((port)?GPIO_IN1_REG:GPIO_IN_REG))
 #define portModeRegister(port)      ((volatile uint32_t*)((port)?GPIO_ENABLE1_REG:GPIO_ENABLE_REG))
